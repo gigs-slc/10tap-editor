@@ -6,6 +6,7 @@
   "module": "lib/module/index.js",
   "types": "lib/typescript/src/index.d.ts",
   "react-native": "src/index.tsx",
+  "private": true,
   "exports": {
     ".": {
       "import": "./lib/module/index.js",
