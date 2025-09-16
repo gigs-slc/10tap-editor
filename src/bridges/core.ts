@@ -5,7 +5,7 @@ import { focusListener } from '../webEditorUtils/focusListener';
 import Document from '@tiptap/extension-document';
 import Paragraph from '@tiptap/extension-paragraph';
 import Text from '@tiptap/extension-text';
-import type { Content } from '@tiptap/react';
+import type { Content } from '@tiptap/core';
 
 export type EditorContentType = 'html' | 'text' | 'json';
 

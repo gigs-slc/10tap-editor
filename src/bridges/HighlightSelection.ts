@@ -1,6 +1,6 @@
 import { Plugin, PluginKey } from '@tiptap/pm/state';
 import { Decoration, DecorationSet } from '@tiptap/pm/view';
-import { Extension } from '@tiptap/react';
+import { Extension } from '@tiptap/core';
 
 export const blueBackgroundPlugin = Extension.create({
   name: 'eventHandler',
@@ -26,13 +26,13 @@ export const blueBackgroundPlugin = Extension.create({
                   class: 'highlight-background',
                 })
               );
-              return DecorationSet.create(newEditorState.doc, decorations);
+              return DecorationSet.create(newEditorState.doc as any, decorations);
             }
           },
         },
         props: {
           decorations(state) {
-            return this.getState(state);
+            return this.getState(state) as any;
           },
         },
       }),
