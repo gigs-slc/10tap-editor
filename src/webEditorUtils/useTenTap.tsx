@@ -83,20 +83,20 @@ export const useTenTap = (options?: useTenTapArgs) => {
 
   const { editor } = useEditor({
     content,
-    onCreate: ({ editor }) =>
+    onCreate: () =>
       sendMessage({
         type: CoreEditorActionType.EditorReady,
         payload: undefined,
       }),
-    onUpdate: ({ editor }) => {
-      sendStateUpdate(editor);
+    onUpdate: ({ editor: updateEditor }) => {
+      sendStateUpdate(updateEditor);
       sendMessage({
         type: CoreEditorActionType.ContentUpdate,
         payload: undefined,
       });
     },
-    onSelectionUpdate: ({ editor }) => sendStateUpdate(editor),
-    onTransaction: ({ editor }) => sendStateUpdate(editor),
+    onSelectionUpdate: ({ editor: selectionEditor }) => sendStateUpdate(selectionEditor),
+    onTransaction: ({ editor: transactionEditor }) => sendStateUpdate(transactionEditor),
     editable: window.editable === 'true' || window.editable === true,
     ...tiptapOptionsWithExtensions,
   });

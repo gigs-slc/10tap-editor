@@ -4,7 +4,9 @@
       "Bash(yarn install)",
       "Bash(yarn prepare)",
       "Bash(yarn editor:build:*)",
-      "Bash(cat:*)"
+      "Bash(cat:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
     ],
     "deny": [],
     "ask": []

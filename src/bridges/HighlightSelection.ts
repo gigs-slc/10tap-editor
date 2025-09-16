@@ -26,7 +26,10 @@ export const blueBackgroundPlugin = Extension.create({
                   class: 'highlight-background',
                 })
               );
-              return DecorationSet.create(newEditorState.doc as any, decorations);
+              return DecorationSet.create(
+                newEditorState.doc as any,
+                decorations
+              );
             }
           },
         },
